@@ -1,0 +1,261 @@
+/* ===============================
+   Google Font
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f6f5ff;
+    color: #222;
+    transition: .3s;
+}
+
+
+/* ===============================
+   Navbar
+================================= */
+
+.navbar {
+    background: linear-gradient(90deg, #24124d, #1d163d);
+}
+
+.navbar-brand {
+    color: #fff!important;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.navbar-brand span {
+    color: #ffd43b;
+}
+
+.navbar-brand small {
+    color: #ddd;
+    font-size: 12px;
+}
+
+.nav-link {
+    color: #fff!important;
+    margin: 0 8px;
+    transition: .3s;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffd43b!important;
+    border-bottom: 3px solid #ffd43b;
+}
+
+
+/* ===============================
+   Hero
+================================= */
+
+h1 {
+    color: #24124d;
+    font-weight: 700;
+}
+
+.lead {
+    color: #555;
+}
+
+
+/* ===============================
+   Joke Card
+================================= */
+
+.joke-card {
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.emoji {
+    font-size: 70px;
+}
+
+#jokeText {
+    font-size: 34px;
+    font-weight: 700;
+    color: #2d215e;
+    margin-top: 20px;
+}
+
+#jokeCategory {
+    font-size: 18px;
+}
+
+
+/* ===============================
+   Buttons
+================================= */
+
+.btn {
+    border-radius: 12px;
+    transition: .3s;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #6c3cff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #4f28cf;
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-success:hover,
+.btn-outline-primary:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ===============================
+   Cards
+================================= */
+
+.card {
+    border: none;
+    border-radius: 18px;
+}
+
+.stat-card {
+    transition: .3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+}
+
+.stat-card h2 {
+    color: #6c3cff;
+    font-weight: 700;
+}
+
+.stat-card p {
+    color: #666;
+}
+
+
+/* ===============================
+   Category Buttons
+================================= */
+
+.btn-outline-primary {
+    border-radius: 14px;
+    padding: 12px;
+}
+
+
+/* ===============================
+   History
+================================= */
+
+.list-group-item {
+    padding: 15px;
+}
+
+
+/* ===============================
+   Footer
+================================= */
+
+footer {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* ===============================
+   Dark Mode
+================================= */
+
+.dark-mode {
+    background: #181827;
+    color: #fff;
+}
+
+.dark-mode h1,
+.dark-mode .lead {
+    color: #fff;
+}
+
+.dark-mode .card {
+    background: #24243b;
+    color: #fff;
+}
+
+.dark-mode .list-group-item {
+    background: #2c2c45;
+    color: #fff;
+}
+
+.dark-mode .stat-card p {
+    color: #ddd;
+}
+
+.dark-mode #jokeText {
+    color: #fff;
+}
+
+.dark-mode .btn-outline-secondary,
+.dark-mode .btn-outline-success,
+.dark-mode .btn-outline-primary {
+    color: #fff;
+    border-color: #777;
+}
+
+.dark-mode footer {
+    color: #ccc;
+}
+
+
+/* ===============================
+   Animation
+================================= */
+
+.joke-card {
+    animation: fadeIn .5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===============================
+   Responsive
+================================= */
+
+@media(max-width:768px) {
+    .navbar-brand {
+        font-size: 22px;
+    }
+    #jokeText {
+        font-size: 24px;
+    }
+    .emoji {
+        font-size: 50px;
+    }
+    .btn {
+        margin-bottom: 10px;
+    }
+}

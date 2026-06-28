@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laugh Line | AI Joke Generator</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark shadow">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#">
+😂 Laugh <span>Line</span>
+<small class="d-block">
+Laugh More, Live Better!
+</small>
+</a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="bi bi-house-fill"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-grid"></i> Categories
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-lightning-charge-fill"></i> Random
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-clock-history"></i> History
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-info-circle"></i> About
+                        </a>
+                    </li>
+
+                </ul>
+
+                <button class="btn btn-light rounded-pill" id="themeBtn">
+
+<i class="bi bi-moon-fill"></i>
+
+</button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <div class="container mt-4">
+
+        <div class="text-center">
+
+            <h1 class="fw-bold">
+
+                Welcome to Laugh Line!
+
+            </h1>
+
+            <p class="lead">
+
+                Get ready to smile with AI-powered jokes delivered in real time.
+
+            </p>
+
+        </div>
+
+        <!-- ================= JOKE CARD ================= -->
+
+        <div class="card shadow-lg joke-card mt-4">
+
+            <div class="card-body text-center">
+
+                <span class="badge bg-primary fs-6">
+
+⚡ Your Joke is Ready!
+
+</span>
+
+                <div class="emoji mt-3">
+
+                    😂
+
+                </div>
+
+                <h2 id="jokeText" class="mt-3">
+
+                    Click "Next Joke"
+
+                </h2>
+
+                <p id="jokeCategory" class="text-primary fw-bold">
+
+                    Category : General
+
+                </p>
+
+                <div class="mt-4 d-flex justify-content-center flex-wrap gap-3">
+
+                    <button class="btn btn-primary" onclick="getJoke()">
+
+<i class="bi bi-arrow-repeat"></i>
+
+Next Joke
+
+</button>
+
+                    <button class="btn btn-outline-secondary" onclick="copyJoke()">
+
+<i class="bi bi-clipboard"></i>
+
+Copy Joke
+
+</button>
+
+                    <button class="btn btn-outline-success" onclick="shareJoke()">
+
+<i class="bi bi-share"></i>
+
+Share
+
+</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= CATEGORIES ================= -->
+
+        <h4 class="mt-5 mb-3">
+
+            Browse by Category
+
+        </h4>
+
+        <div class="row g-3">
+
+            <div class="col-md-2">
+
+                <button class="btn btn-outline-primary w-100" onclick="getCategory('Any')">
+
+😂 General
+
+</button>
+
+            </div>
+
+            <div class="col-md-2">
+
+                <button class="btn btn-outline-primary w-100" onclick="getCategory('Programming')">
+
+👨‍💻 Programming
+
+</button>
+
+            </div>
+
+            <div class="col-md-2">
+
+                <button class="btn btn-outline-primary w-100" onclick="getCategory('Misc')">
+
+🎉 Misc
+
+</button>
+
+            </div>
+
+            <div class="col-md-2">
+
+                <button class="btn btn-outline-primary w-100" onclick="getCategory('Pun')">
+
+😆 Pun
+
+</button>
+
+            </div>
+
+            <div class="col-md-2">
+
+                <button class="btn btn-outline-primary w-100" onclick="getCategory('Spooky')">
+
+👻 Spooky
+
+</button>
+
+            </div>
+
+            <div class="col-md-2">
+
+                <button class="btn btn-outline-primary w-100" onclick="getCategory('Christmas')">
+
+🎄 Christmas
+
+</button>
+
+            </div>
+
+        </div>
+
+        <!-- ================= STATS ================= -->
+
+        <div class="row mt-5">
+
+            <div class="col-md-3">
+
+                <div class="card stat-card">
+
+                    <div class="card-body text-center">
+
+                        <h2>1250+</h2>
+
+                        <p>Jokes Generated</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card stat-card">
+
+                    <div class="card-body text-center">
+
+                        <h2>99.9%</h2>
+
+                        <p>API Uptime</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card stat-card">
+
+                    <div class="card-body text-center">
+
+                        <h2>Real-Time</h2>
+
+                        <p>Joke Generation</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card stat-card">
+
+                    <div class="card-body text-center">
+
+                        <h2>100%</h2>
+
+                        <p>Fun Guaranteed</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= HISTORY ================= -->
+
+        <div class="card mt-5 shadow">
+
+            <div class="card-header fw-bold">
+
+                <i class="bi bi-clock-history"></i> Recent Jokes
+
+            </div>
+
+            <ul class="list-group list-group-flush" id="historyList">
+
+                <li class="list-group-item">
+
+                    No jokes yet.
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <footer class="text-center mt-5 mb-3">
+
+            © 2026 Laugh Line | AI Joke Generator
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
